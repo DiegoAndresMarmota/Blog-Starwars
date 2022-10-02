@@ -1,0 +1,13 @@
+.category-title {
+    margin-right: 1rem;
+}
+
+.btn-more {
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    background-color: #0d6efd;
+}
+
+.btn-more:hover {
+    background-color: #095fe0;
+}
