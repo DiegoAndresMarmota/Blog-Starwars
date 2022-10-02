@@ -1,0 +1,25 @@
+.navbar {
+    background-color: #171819;
+}
+
+a {
+    color: white !important;
+}
+
+.active {
+    color: #3993ec !important;
+    font-weight: 600 !important;
+}
+
+.btn-toggle {
+    margin-right: 6rem;
+}
+
+.dropdown-menu {
+    background-color: #1b1b1b;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: #252525;
+}
