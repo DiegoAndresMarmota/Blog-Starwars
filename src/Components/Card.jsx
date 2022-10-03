@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import PeopleCard from "../Components/PeopleCard.jsx";
+import PlanetsCard from "../Components/PlanetsCard.jsx";
 import image from "../Img/card_demo.jpg";
 
 const Card = () => {
