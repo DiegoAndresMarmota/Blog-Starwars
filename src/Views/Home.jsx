@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Card from "../Components/Card";
+import PeopleCard from "../Components/PeopleCard.jsx";
+import PlanetsCard from "../Components/PlanetsCard.jsx";
 import "../Styles/Index.css";
 
 const Home = () => {
