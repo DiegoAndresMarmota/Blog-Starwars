@@ -56,7 +56,9 @@ const getState = ({ getTienda, getAcciones, setTienda }) => {
           nombre: `${nombre}`,
         };
 
-        const encontrarFavorito = favoritos.find((elemento) => elemento.nombre === favorito.nombre);
+        const encontrarFavorito = favoritos.find(
+          (elemento) => elemento.nombre === favorito.nombre
+        );
         if (!encontrarFavorito) {
           favoritos.push(favorito);
           setTienda({ favoritos: favoritos });
@@ -66,7 +68,9 @@ const getState = ({ getTienda, getAcciones, setTienda }) => {
       borrarFavorito: (nombre) => {
         const acciones = getAcciones();
         const { favoritos } = getTienda();
-        const buscarElemento = favoritos.filter((elemento) => elemento.nombre !== nombre);
+        const buscarElemento = favoritos.filter(
+          (elemento) => elemento.nombre !== nombre
+        );
         acciones.borrarItemFavorito(nombre);
         setTienda({ favoritos: buscarElemento });
       },
@@ -75,7 +79,14 @@ const getState = ({ getTienda, getAcciones, setTienda }) => {
         let meGusta = nombre;
         tienda.meGusta.push(meGusta);
       },
--------------(Pendiente borrarItemMegusta)------------
+      borrarItemFavorito: (nombre) => {
+        const tienda = getTienda();
+        const meGustaIndice = tienda.meGusta.indexOf(nombre);
+        const meGustaCopia = [...tienda.meGusta];
+        meGustaCopia[meGustaIndice] = null;
+        const meGustaBuscar = meGustaCopia.filter((elemento) => elemento !== null);
+        setTienda({ meGusta: meGustaBuscar });
+      },
     },
   };
 };
