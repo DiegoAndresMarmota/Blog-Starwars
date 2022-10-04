@@ -17,6 +17,7 @@ const PlanetsCard = ({ nombre, diametro, clima, poblacion, index }) => {
           src="http://placehold.it/400x200"
           alt="placehold.it"
           className="card-img-top"
+          
         />
         <div className="card-body">
           <h5 className="card-title">{nombre}</h5>
