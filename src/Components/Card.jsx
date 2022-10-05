@@ -19,7 +19,7 @@ const Card = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
             possimus eligendi deserunt architecto, necessitatibus saepe.
           </p>
-          <div className="btns-container d-flex">
+          <div className="btn-container d-flex">
             <Link to="/category/people" className="btn btn-primary">
               Lorem, ipsum.
             </Link>

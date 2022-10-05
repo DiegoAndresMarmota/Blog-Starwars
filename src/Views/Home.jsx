@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import Card from "../Components/Card";
-import PeopleCard from "../Components/PeopleCard.jsx";
-import PlanetsCard from "../Components/PlanetsCard.jsx";
+import PeopleCard from "../Components/PeopleCard";
+import PlanetsCard from "../Components/PlanetsCard";
 import VehicleCard from "../Components/VehicleCard";
 import "../Styles/Index.css";
 
 const Home = () => {
   const { tienda, acciones } = useContext(Context);
-  
+
   return (
     <>
       <div className="people mt-5">
@@ -39,7 +38,7 @@ const Home = () => {
           {!!tienda.vehiculos &&
             tienda.vehiculos.resultados.length > 0 &&
             tienda.vehiculos.resultados
-              .filter((item, index, obj) => index <= 3)
+              .filter((item, index, objeto) => index <= 3)
               .map((item, i) => (
                 <VehicleCard {...item} key={item.name} index={i} />
               ))}
@@ -64,6 +63,6 @@ const Home = () => {
       </div>
     </>
   );
-}
+};
 
 export default Home;
