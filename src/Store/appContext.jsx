@@ -1,17 +1,17 @@
 import { createContext, useState, useEffect } from "react";
-import getState from "./flux";
+import getState from "./Flux";
 
 export const Context = createContext(null);
 
-const injectContext = (PassedComponent) => {
+const AplicationContext = (PassedComponent) => {
   const StoreWrapper = (props) => {
     const [state, setState] = useState(
       getState({
         getTienda: () => state.tienda,
         getAcciones: () => state.acciones,
-        setTienda: (updatedStore) =>
+        setTienda: (actualizarTienda) =>
           setState({
-            tienda: Object.assign(state.tienda, updatedStore),
+            tienda: Object.assign(state.tienda, actualizarTienda),
             acciones: { ...state.acciones },
           }),
       })
@@ -32,4 +32,4 @@ const injectContext = (PassedComponent) => {
   return StoreWrapper;
 };
 
-export default injectContext;
+export default AplicationContext;
