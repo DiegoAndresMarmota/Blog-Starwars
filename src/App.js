@@ -9,18 +9,19 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <BrowserRouter>
+        <Navbar />
         <div className="container">
           <Routes>
-            <Route />
-            <Route />
-            <Route />
-            <Route />
+            <Route path="/" element={<Home />} />
+            <Route path="/categoria/personajes" element={<People />} />
+            <Route path="/categoria/planetas" element={<Planets />} />
+            <Route path="/categoria/vehiculos" element={<Vehicles />} />
           </Routes>
         </div>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 
