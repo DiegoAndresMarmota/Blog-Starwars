@@ -6,6 +6,7 @@ import People from "./Views/People";
 import Vehicles from "./Views/Vehicles";
 import Planets from "./Views/Planets";
 import "./App.css";
+import PageNotFound from "./Views/PageNotFound";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <div className="container">
           <Routes>
+            <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Home />} />
             <Route path="/categoria/personajes" element={<People />} />
             <Route path="/categoria/planetas" element={<Planets />} />
