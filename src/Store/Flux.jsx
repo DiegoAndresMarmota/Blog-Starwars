@@ -7,7 +7,7 @@ const getState = ({ getTienda, getAcciones, setTienda }) => {
       favoritos: [],
     },
     acciones: {
-      getCaracteres: async (url) => {
+      getCaracteres: async url => {
         try {
           const respuesta = await fetch(url, {
             method: "GET",
@@ -21,7 +21,7 @@ const getState = ({ getTienda, getAcciones, setTienda }) => {
           console.log(error);
         }
       },
-      getPlanetas: async (url) => {
+      getPlanetas: async url => {
         try {
           const respuesta = await fetch(url, {
             method: "GET",
@@ -35,7 +35,7 @@ const getState = ({ getTienda, getAcciones, setTienda }) => {
           console.log(error);
         }
       },
-      getVehiculos: async (url) => {
+      getVehiculos: async url => {
         try {
           const respuesta = await fetch(url, {
             method: "GET",

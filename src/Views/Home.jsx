@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Card from "../Components/Card";
 import PeopleCard from "../Components/PeopleCard";
 import PlanetsCard from "../Components/PlanetsCard";
 import VehicleCard from "../Components/VehicleCard";

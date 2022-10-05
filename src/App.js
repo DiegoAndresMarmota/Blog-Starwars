@@ -5,7 +5,7 @@ import Home from "./Views/Home";
 import People from "./Views/People";
 import Vehicles from "./Views/Vehicles";
 import Planets from "./Views/Planets";
-import "./App.css";
+import "./Styles/App.css";
 import PageNotFound from "./Views/PageNotFound";
 
 function App() {
