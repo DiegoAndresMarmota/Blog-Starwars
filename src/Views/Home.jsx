@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Card from "../Components/Card";
+import { Context } from "../Store/appContext";
 import PeopleCard from "../Components/PeopleCard";
 import PlanetsCard from "../Components/PlanetsCard";
 import VehicleCard from "../Components/VehicleCard";
 import "../Styles/Index.css";
 
 const Home = () => {
-  const { tienda, acciones } = useContext(Context);
+  const tienda = useContext(Context);
 
   return (
     <>

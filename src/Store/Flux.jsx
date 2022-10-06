@@ -5,6 +5,7 @@ const getState = ({ getTienda, getAcciones, setTienda }) => {
       planetas: null,
       vehiculos: null,
       favoritos: [],
+      meGusta: [],
     },
     acciones: {
       getCaracteres: async url => {
@@ -49,7 +50,7 @@ const getState = ({ getTienda, getAcciones, setTienda }) => {
           console.log(error);
         }
       },
-      agregarFavorito: (nombre) => {
+      agregarFavorito: nombre => {
         const acciones = getAcciones();
         const { favoritos } = getTienda();
         const favorito = {
@@ -57,7 +58,7 @@ const getState = ({ getTienda, getAcciones, setTienda }) => {
         };
 
         const encontrarFavorito = favoritos.find(
-          (elemento) => elemento.nombre === favorito.nombre
+          elemento => elemento.nombre === favorito.nombre
         );
         if (!encontrarFavorito) {
           favoritos.push(favorito);
@@ -65,21 +66,24 @@ const getState = ({ getTienda, getAcciones, setTienda }) => {
           acciones.itemFavorito(nombre);
         }
       },
-      borrarFavorito: (nombre) => {
+
+      borrarFavorito: nombre => {
         const acciones = getAcciones();
         const { favoritos } = getTienda();
         const buscarElemento = favoritos.filter(
-          (elemento) => elemento.nombre !== nombre
+          elemento => elemento.nombre !== nombre
         );
         acciones.borrarItemFavorito(nombre);
         setTienda({ favoritos: buscarElemento });
       },
-      itemFavorito: (nombre) => {
+
+      itemFavorito: nombre => {
         const tienda = getTienda();
         let meGusta = nombre;
         tienda.meGusta.push(meGusta);
       },
-      borrarItemFavorito: (nombre) => {
+
+      borrarItemFavorito: nombre => {
         const tienda = getTienda();
         const meGustaIndice = tienda.meGusta.indexOf(nombre);
         const meGustaCopia = [...tienda.meGusta];
