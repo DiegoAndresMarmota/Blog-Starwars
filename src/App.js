@@ -20,6 +20,9 @@ function App() {
             <Route path="/categoria/personajes" element={<People />} />
             <Route path="/categoria/planetas" element={<Planets />} />
             <Route path="/categoria/vehiculos" element={<Vehicles />} />
+            <Route />
+            <Route />
+            <Route />
           </Routes>
         </div>
       </BrowserRouter>
