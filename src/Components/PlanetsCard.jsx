@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../Store/appContext";
+import Context from "../Store/appContext";
 
 const estiloCarta = {
   width: "18rem",
@@ -17,7 +17,6 @@ const PlanetsCard = ({ nombre, diametro, clima, poblacion, index }) => {
           src="http://placehold.it/400x200"
           alt="placehold.it"
           className="card-img-top"
-          
         />
         <div className="card-body">
           <h5 className="card-title">{nombre}</h5>

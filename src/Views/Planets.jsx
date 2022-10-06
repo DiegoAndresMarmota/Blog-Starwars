@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useContext } from "react";
 import { Context } from "../Store/appContext";
-import PlanetsCard from "../Components/PlanetsCard.jsx";
+import PlanetsCard from "../Components/PlanetsCard";
 
 const estiloCard = {
   width: "100%",

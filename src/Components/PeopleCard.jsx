@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../Store/appContext";
+import Context from "../Store/appContext";
 
 const estiloCarta = {
   width: "18rem",

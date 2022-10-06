@@ -1,8 +1,7 @@
 import React from "react";
 import { useContext } from "react";
-import Card from "../Components/Card";
 import { Context } from "../Store/appContext";
-import PeopleCard from "../Components/PeopleCard.jsx";
+import PeopleCard from "../Components/PeopleCard";
 
 const estiloCard = {
   width: "100%",
@@ -20,7 +19,7 @@ const People = ({ selectorID, setSelectorID }) => {
         <button
           className="btn btn-secondary"
           onClick={() => {
-            acciones.getCharacters(tienda?.caracteres.atras);
+            acciones.getCaracteres(tienda?.caracteres.atras);
           }}
           style={estiloBoton}
         >
@@ -29,7 +28,7 @@ const People = ({ selectorID, setSelectorID }) => {
         <button
           className="btn btn-primary"
           onClick={() => {
-            acciones.getCharacters(tienda?.caracteres.siguiente);
+            acciones.getCaracteres(tienda?.caracteres.siguiente);
           }}
         >
           Siguiente página
