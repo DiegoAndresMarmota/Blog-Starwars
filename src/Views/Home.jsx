@@ -7,8 +7,8 @@ import VehicleCard from "../Components/VehicleCard";
 import "../Styles/Index.css";
 
 const Home = () => {
-  const tienda = useContext(Context);
-
+  const { tienda, acciones } = useContext(Context);
+ 
   return (
     <>
       <div className="people mt-5">

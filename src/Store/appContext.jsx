@@ -18,9 +18,9 @@ const injectContext = (PassedComponent) => {
     );
 
     useEffect(() => {
-      state.actions.loadData("people");
-      state.actions.loadData("vehicles");
-      state.actions.loadData("planets");
+      state.actions.getCharacters("people");
+      state.actions.getPlanetas("vehicles");
+      state.actions.getVehiculos("planets");
     }, []);
 
     return (
