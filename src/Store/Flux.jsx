@@ -1,95 +1,88 @@
-const getState = ({ getTienda, getAcciones, setTienda }) => {
+const getState = ({ getStore, getActions, setStore }) => {
   return {
-    tienda: {
-      caracteres: null,
+    store: {
+      characters: null,
       planetas: null,
       vehiculos: null,
-      favoritos: [],
-      meGusta: [],
+      favorites: [],
+      liked: [],
     },
-    acciones: {
-      getCaracteres: async url => {
+    actions: {
+      getCharacters: async (url) => {
         try {
-          const respuesta = await fetch(url, {
+          const response = await fetch(url, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
             },
           });
-          const dato = await respuesta.json();
-          setTienda({ caracteres: dato });
+          const data = await response.json();
+          setStore({ characters: data });
         } catch (error) {
           console.log(error);
         }
       },
-      getPlanetas: async url => {
+      getPlanetas: async (url) => {
         try {
-          const respuesta = await fetch(url, {
+          const response = await fetch(url, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
             },
           });
-          const dato = await respuesta.json();
-          setTienda({ planetas: dato });
+          const data = await response.json();
+          setStore({ planetas: data });
         } catch (error) {
           console.log(error);
         }
       },
-      getVehiculos: async url => {
+      getVehiculos: async (url) => {
         try {
-          const respuesta = await fetch(url, {
+          const response = await fetch(url, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
             },
           });
-          const dato = await respuesta.json();
-          setTienda({ vehiculos: dato });
+          const data = await response.json();
+          setStore({ vehiculos: data });
         } catch (error) {
           console.log(error);
         }
       },
-      agregarFavorito: nombre => {
-        const acciones = getAcciones();
-        const { favoritos } = getTienda();
-        const favorito = {
-          nombre: `${nombre}`,
+      addFavorite: (name) => {
+        const actions = getActions();
+        const { favorites } = getStore();
+        const favorite = {
+          name: `${name}`,
         };
 
-        const encontrarFavorito = favoritos.find(
-          elemento => elemento.nombre === favorito.nombre
-        );
-        if (!encontrarFavorito) {
-          favoritos.push(favorito);
-          setTienda({ favoritos: favoritos });
-          acciones.itemFavorito(nombre);
+        const findFav = favorites.find((elem) => elem.name === favorite.name);
+        if (!findFav) {
+          favorites.push(favorite);
+          setStore({ favorites: favorites });
+          actions.likedItem(name);
         }
       },
-
-      borrarFavorito: nombre => {
-        const acciones = getAcciones();
-        const { favoritos } = getTienda();
-        const buscarElemento = favoritos.filter(
-          elemento => elemento.nombre !== nombre
-        );
-        acciones.borrarItemFavorito(nombre);
-        setTienda({ favoritos: buscarElemento });
+      deleteFavorite: (name) => {
+        const actions = getActions();
+        const { favorites } = getStore();
+        const filterElem = favorites.filter((elem) => elem.name !== name);
+        actions.deleteLikedItem(name);
+        setStore({ favorites: filterElem });
       },
-
-      itemFavorito: nombre => {
-        const tienda = getTienda();
-        let meGusta = nombre;
-        tienda.meGusta.push(meGusta);
+      likedItem: (name) => {
+        const store = getStore();
+        let like = name;
+        store.liked.push(like);
       },
-
-      borrarItemFavorito: nombre => {
-        const tienda = getTienda();
-        const meGustaIndice = tienda.meGusta.indexOf(nombre);
-        const meGustaCopia = [...tienda.meGusta];
-        meGustaCopia[meGustaIndice] = null;
-        const meGustaBuscar = meGustaCopia.filter((elemento) => elemento !== null);
-        setTienda({ meGusta: meGustaBuscar });
+      deleteLikedItem: (name) => {
+        const store = getStore();
+        const likedIndex = store.liked.indexOf(name);
+        const likedCopy = [...store.liked];
+        likedCopy[likedIndex] = null;
+        const filterLikes = likedCopy.filter((elem) => elem !== null);
+        setStore({ liked: filterLikes });
       },
     },
   };
