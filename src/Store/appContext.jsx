@@ -3,7 +3,7 @@ import getState from "./flux";
 
 export const Context = React.createContext(null);
 
-const AplicationContext = (PassedComponent) => {
+const injectContext = (PassedComponent) => {
   const StoreWrapper = (props) => {
     const [state, setState] = useState(
       getState({
@@ -32,4 +32,4 @@ const AplicationContext = (PassedComponent) => {
   return StoreWrapper;
 };
 
-export default AplicationContext;
+export default injectContext;

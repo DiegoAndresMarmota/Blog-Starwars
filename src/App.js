@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AplicationContext from "./Store/appContext";
+import injectContext from "./Store/appContext";
 import Navbar from "./Components/Navbar";
 import Home from "./Views/Home";
 import People from "./Views/People";
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default AplicationContext(App);
+export default injectContext(App);
