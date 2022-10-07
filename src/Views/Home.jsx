@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { Context } from "../Store/appContext";
 import PeopleCard from "../Components/PeopleCard";
 import PlanetsCard from "../Components/PlanetsCard";
@@ -8,7 +9,6 @@ import "../Styles/Index.css";
 
 const Home = () => {
   const { tienda, acciones } = useContext(Context);
- 
   return (
     <>
       <div className="people mt-5">
@@ -41,7 +41,7 @@ const Home = () => {
             tienda.vehiculos.resultados
               .filter((item, index, objeto) => index <= 3)
               .map((item, i) => (
-                <VehicleCard {...item} key={item.name} index={i} />
+                <VehicleCard {...item} key={item.nombre} index={i} />
               ))}
         </div>
       </div>

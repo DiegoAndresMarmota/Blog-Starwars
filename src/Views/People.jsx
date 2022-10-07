@@ -11,7 +11,7 @@ const estiloBoton = {
   margin: "10px",
 };
 
-const People = ({ selectorID, setSelectorID }) => {
+const People = () => {
   const { tienda, acciones } = useContext(Context);
   return (
     <>

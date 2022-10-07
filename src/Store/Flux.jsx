@@ -8,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       liked: [],
     },
     actions: {
-      getCharacters: async (url) => {
+      getCaracteres: async (url) => {
         try {
           const response = await fetch(url, {
             method: "GET",
