@@ -49,7 +49,7 @@ const LoremPlanets = () => {
                 {tienda?.planetas.resultados[params.index].nombre}
               </h5>
               <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, ducimus!
               </p>
             </div>
           </div>
@@ -60,7 +60,10 @@ const LoremPlanets = () => {
               <div className="col-12">
                 <h5>Rotación planetaria:</h5>
                 <div>
-                  {tienda?.planetas?.resultados[params.index].rotacion_planetaria}
+                  {
+                    tienda?.planetas?.resultados[params.index]
+                      .rotacion_planetaria
+                  }
                 </div>
               </div>
             </div>
@@ -68,7 +71,10 @@ const LoremPlanets = () => {
               <div className="col-12">
                 <h5>Traslación planetaria:</h5>
                 <div>
-                  {tienda?.planetas?.resultados[params.index].traslacion_planetaria}
+                  {
+                    tienda?.planetas?.resultados[params.index]
+                      .traslacion_planetaria
+                  }
                 </div>
               </div>
             </div>
@@ -109,13 +115,17 @@ const LoremPlanets = () => {
             <div className="container-category" style={estiloContainer2}>
               <div className="col-12">
                 <h5>Población:</h5>
-                <div>{tienda?.planetas?.resultados[params.index].poblacion}</div>
+                <div>
+                  {tienda?.planetas?.resultados[params.index].poblacion}
+                </div>
               </div>
             </div>
             <div className="container-category" style={estiloContainerNaboo}>
               <div className="col-12">
                 <h5>Residentes:</h5>
-                <div>{tienda?.planetas?.resultados[params.index].residentes}</div>
+                <div>
+                  {tienda?.planetas?.resultados[params.index].residentes}
+                </div>
               </div>
             </div>
             <div className="container-category" style={estiloContainer2}>
