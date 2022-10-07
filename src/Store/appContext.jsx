@@ -1,35 +1,35 @@
-import { createContext, useState, useEffect } from "react";
-import getEstado from "./Flux";
+import React, { useState, useEffect } from "react";
+import getState from "./flux";
 
-export const Contexto = createContext(null);
+export const Context = React.createContext(null);
 
-const useContext = (componentePadre) => {
+const AplicationContext = (PassedComponent) => {
   const StoreWrapper = (props) => {
-    const [estado, setEstado] = useState(
-      getEstado({
-        getTienda: () => estado.tienda,
-        getAcciones: () => estado.acciones,
-        setTienda: (actualizarTienda) =>
-          setEstado({
-            tienda: Object.assign(estado.tienda, actualizarTienda),
-            acciones: { ...estado.acciones },
+    const [state, setState] = useState(
+      getState({
+        getStore: () => state.store,
+        getActions: () => state.actions,
+        setStore: (updatedStore) =>
+          setState({
+            store: Object.assign(state.store, updatedStore),
+            actions: { ...state.actions },
           }),
       })
     );
 
     useEffect(() => {
-      estado.acciones.getCaracteres("https://swapi.dev/api/people/");
-      estado.acciones.getPlanetas("https://swapi.dev/api/planets/");
-      estado.acciones.getVehiculos("https://swapi.dev/api/vehicles/");
+      state.actions.loadData("people");
+      state.actions.loadData("vehicles");
+      state.actions.loadData("planets");
     }, []);
 
     return (
-      <Contexto.Provider value={estado}>
-        <componentePadre {...props} />
-      </Contexto.Provider>
+      <Context.Provider value={state}>
+        <PassedComponent {...props} />
+      </Context.Provider>
     );
   };
   return StoreWrapper;
 };
 
-export default useContext;
+export default AplicationContext;
