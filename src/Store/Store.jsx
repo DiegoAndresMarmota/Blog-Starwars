@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      characters: null,
+      caracteres: null,
       planetas: null,
       vehiculos: null,
       favorites: [],

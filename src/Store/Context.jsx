@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import getState from "./Flux";
+import getState from "./Store";
 
 export const Context = React.createContext(null);
 
