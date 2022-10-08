@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { Context } from "../Store/appContext";
+import { Context } from "../Store/Context";
 import VehicleCard from "../Components/VehicleCard";
 
 const estiloCard = {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { Context } from "../Store/appContext";
+import { Context } from "../Store/Context";
 import PeopleCard from "../Components/PeopleCard";
 
 const estiloCard = {

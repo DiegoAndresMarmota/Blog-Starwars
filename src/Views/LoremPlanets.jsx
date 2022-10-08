@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import PeopleCard from "../Components/PeopleCard";
-import { Context } from "../Store/appContext";
+
+import { Context } from "../Store/Context";
 
 const estiloDiv = {
   margin: "15px",

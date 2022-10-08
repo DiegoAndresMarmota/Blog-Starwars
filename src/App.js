@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import injectContext from "./Store/appContext";
+import injectContext from "./Store/Context";
 import Navbar from "./Components/Navbar";
 import Home from "./Views/Home";
 import People from "./Views/People";
